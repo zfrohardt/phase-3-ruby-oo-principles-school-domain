@@ -1,10 +1,10 @@
 # Domain Model for a School
 
-## Objectives
+## Learning Goals
 
-1. Define the concept of a domain model.
-2. Create your own domain model.
-3. Write instance methods that manipulate nested data structures.
+- Define the concept of a domain model
+- Create your own domain model
+- Write instance methods that manipulate nested data structures
 
 ## What is a Domain Model?
 
@@ -22,16 +22,20 @@ individual cars, but the entire car factory. In this (simplified) example, you
 could write an `AutoPlant` class that produces individual cars and has instance
 and class methods that handle things like `take_inventory` or `paint_cars`. Such
 a program not only represents a single object or concept but an entire
-environment &mdash; that of the auto factory. Consequently, this program could
-be understood as a domain model. It takes the world of the auto factory, and
-maps the constituents of that world into your program.
+environment — that of the auto factory. Consequently, this program could be
+understood as a domain model. It takes the world of the auto factory, and maps
+the constituents of that world into your program.
 
 As we begin to write more and more advanced programs, you'll see that to really
 accurately model a domain, we'll need to build a program that contains more than
 one class. For now, however, we'll keep it simple.
 
 In this assignment you'll be writing a simple domain model that represents a
-school.
+high school. Our model will include a list of the students at the school
+organized by grade. It will also include instance methods that 1) add a student
+to the roster for their grade; 2) return the list of students in a particular
+grade; and 3) return a roster for all grades with the student names sorted
+alphabetically.
 
 ## Instructions
 
@@ -103,7 +107,7 @@ hash
 Ta-da! When we first create the key and point it to a value of an empty array,
 we are able to then successfully add items to that array.
 
-**Hint:** Now that we've thought about how to build up our hash, let's talk
+Now that we've thought about how to build up our hash, let's talk
 about how to add successive students to each grade. Let's say that we're adding
 the student `"AC Slater"` to grade `9`. If the `roster` already has a key of
 grade `9`, we'll be able to push AC Slater into the array that the grade `9` key
@@ -112,6 +116,9 @@ it to an empty array. However, if we're in the scenario in which the grade `9`
 key already exists, we will erase its current contents by creating a key of `9`
 and setting it equal to an empty array! You'll need to understand this in order
 to get the tests passing.
+
+**Hint:** One way to solve this problem is by using [Ruby's `|=` (or equals)
+operator][or-equals]
 
 Here's an example of the desired behavior:
 
@@ -146,6 +153,4 @@ school.sort
 Note that since hashes are unordered by nature, the order of the keys does not
 matter here, just the order of the student's names within each array.
 
-## Resources
-
-* [StackOverflow - What does ||= (or equals) mean in Ruby?](http://stackoverflow.com/questions/995593/what-does-or-equals-mean-in-ruby)
+[or-equals]: http://stackoverflow.com/questions/995593/what-does-or-equals-mean-in-ruby
