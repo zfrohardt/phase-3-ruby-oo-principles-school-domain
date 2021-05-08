@@ -1,4 +1,4 @@
-# Domain Model for a School
+# Domain Modeling
 
 ## Learning Goals
 
